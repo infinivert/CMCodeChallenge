@@ -1,7 +1,5 @@
 <?php
 
-    $pageTitle = 'Buy Credits';
-
     require(APPPATH . 'Views/Partials/head.php');
     // Include additional header scripts or styles here
     require(APPPATH . 'Views/Partials/body.php');
