@@ -12,7 +12,7 @@
 
 ### Installation:
 
-* Create a database with the credentials that follow (or use your own, and change the credentials in `Controllers/Database.php`, and then run the `_SQL/install.sql` script to create table and populate it with data.
+* Create a database with the credentials that follow (or use your own, and change the credentials in `Controllers/Database.php`), and then run the `_SQL/install.sql` script to create table and populate it with data.
 ---
 
 ### Database Credentials:
