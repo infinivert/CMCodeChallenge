@@ -12,6 +12,8 @@ class Credit
         $pageHeading = 'Stock up on Credits';
         $pageSubHeading = 'Save money and get free bonus credits when you buy in bulk';
 
+        $defaultCredit = 3;
+
         $credits = $this->getList();
 
         require(APPPATH . 'Views/credits.php');

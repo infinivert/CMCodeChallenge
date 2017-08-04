@@ -1,0 +1,352 @@
+.jcc-app {
+    box-sizing: border-box;
+    font-family: 'averta-light', sans-serif;
+    margin-top: 50px;
+}
+
+/* Mobile first */
+.jcc-credit {
+    display: block;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.jcc-credit:before{
+    content: '';
+    border: 2px solid #e3e3e3;
+    display: block;
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    border-radius: 5px;
+    z-index: -1;
+}
+
+.jcc-credit.active:before {
+    border-color: #b8cf86;
+}
+
+.jcc-credit .icon-check-corner {
+    display: none;
+}
+
+.jcc-credit.active .icon-check-corner {
+    display: block;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    border-radius: 0 3px 0 0;
+    overflow: hidden;
+}
+
+.jcc-credit input[type="radio"] {
+    visibility: hidden;
+    position: absolute;
+}
+
+.jcc-credit-cost {
+    color: #5c554b;
+    display: block;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 18px;
+    margin: 50px 0 15px;
+}
+
+.jcc-credit-bonus {
+    color: #5c554b;
+    display: block;
+    font-size: 15px;
+    margin: 0 0 40px;
+    line-height: 22px;
+    font-weight: 700;
+    font-family: "Helvetica Neue",helvetica,Arial,sans-serif;
+}
+
+.jcc-credit-label {
+    border-top: 1px solid #e3e3e3;
+    display: block;
+    padding: 14px 16px;
+    color: #5c554b;
+    font-size: 13px;
+    line-height: 22px;
+    font-family: "Helvetica Neue",helvetica,Arial,sans-serif;
+    font-weight: 700;
+    margin: 0 5px 7px;
+}
+
+.jcc-payment {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.jcc-payment-heading {
+    padding: 0px 0px 5px;
+    font-size: 18px;
+    color: #5c554b;
+    font-weight: 300;
+    border-bottom: 1px #d0cac0 solid;
+}
+
+.jcc-payment-methods {
+    font-size: 12px;
+    font-family: "Helvetica Neue",helvetica,Arial,sans-serif;
+}
+
+.jcc-payment-method-heading {
+    display: inline-block;
+    margin-right: 42px;
+}
+
+.jcc-radio, .jcc-checkbox {
+    position: relative;
+    display: inline-block;
+    padding-left: 20px;
+    margin-left: 12px;
+}
+
+.jcc-radio input[type="radio"], .jcc-checkbox input[type="checkbox"] {
+    visibility: hidden;
+    position: absolute;
+}
+
+.jcc-radio:before {
+    content: '';
+    display: block;
+    background-color: white;
+    border: 3px solid #fcfcf9;
+    border-radius: 50%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    height: 7px;
+    width: 7px;
+    margin-top: -8px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+
+.jcc-checkbox:before {
+    content: '';
+    display: block;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    margin-top: -8px;
+    float: left;
+    height: 13px;
+    width: 13px;
+    margin-top: -7px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+
+.jcc-radio.checked:before {
+    background-color: #a0ba6b;    
+}
+
+.jcc-checkbox.checked:before {
+    background-image: url("https://d3ui957tjb5bqd.cloudfront.net/images/1/sprites/icon@2x.png?Mvugw7FiA9CGZQApcO8Qmw%3D%3D");
+    background-position: -344px -355px;
+    background-size: 419px 418px;
+}
+
+.jcc-payment-box-container {
+    background: white url("https://d3ui957tjb5bqd.cloudfront.net/images/1/purchase-process/cc-bg.png?Yr8fEoNYM30aMn6%2BRo%2FWzA%3D%3D");
+    border: 1px solid #d9d9d9;
+    padding: 10px;
+    width: 198px;
+    height: 131px;
+    position: relative;
+    z-index: 1;
+    margin: 20px auto 10px;
+    text-align: left;
+    overflow: hidden;
+}
+
+.jcc-payment-box-info {
+    background: rgba(240, 240, 241, 0.6) none repeat scroll 0 0;
+    height: 29px;
+    line-height: 28px;
+    padding: 0 10px;
+    display: block;
+    margin: 0 -10px 10px;
+}
+
+.jcc-payment-box-info .jcc-radio:first-child {
+    margin-left: 0;
+    margin-right: -3px;
+}
+
+.icon-card-visa:before {
+    -webkit-animation: CreditCards 5s infinite; /* Safari 4+ */
+    -moz-animation:    CreditCards 5s infinite; /* Fx 5+ */
+    -o-animation:      CreditCards 5s infinite; /* Opera 12+ */
+    animation:         CreditCards 5s infinite; /* IE 10+, Fx 29+ */
+}
+
+.jcc-payment-box-info .jcc-checkbox {
+    margin: 2px 0 0 9px;
+}
+
+.jcc-payment-box-info-cost {
+    color: #565249;
+    float: right;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.jcc-payment-box-info-cost:before {
+    content: '$';
+}
+
+.jcc-button {
+    display: inline-block;
+    background-color: #8ba753;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.2;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    padding: 12px 20px;
+    border: 1px solid #8ba753;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: 0 none;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    width: 198px;
+}
+
+.jcc-button:hover {
+    background-color: #97b162;
+    border-color: #97b162;
+}
+
+.jcc-cc input[type="text"] {
+    background-color: #fcfcf8;
+    min-height: 30px;
+    height: 30px;
+    padding: 5px 8px;
+    display: inline-block;
+    border: 0px none;
+    border-radius: 2px;
+    color: #5c554b;
+    font-size: 12px;
+    line-height: 20px;
+    vertical-align: baseline;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.08) inset, 0 0 0 1px rgba(93, 89, 83, 0.2), 0 -1px 0 0 rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease-in-out;
+}
+
+.jcc-payment-box-container {
+    position: relative;
+}
+
+.jcc-payment-box-container .jcc-cc-number {
+    margin: 0 0 10px;
+    width: 100%;
+}
+
+.jcc-payment-box-container .icon-lock {
+    position: absolute;
+    right: 20px;
+    top: 57px;
+}
+
+.jcc-payment-box-container .jcc-cc-exp {
+    width: 65px;
+}
+
+.jcc-payment-box-container .jcc-cc-cvc {
+    width: 41px;
+}
+
+.jcc-paypal {
+    display: none;
+}
+
+/* Larger screens */
+@media (min-width: 767px) {
+    .jcc-credit {
+        display: inline-block;
+        width: 176px;
+        margin: 0 15px 0 0;
+        top: 0;
+        left: 0;
+        transition: all 0.15s ease-in-out;
+    }
+    .jcc-credit:last-child {
+        display: inline-block;
+        margin: 0;
+    }
+    .jcc-credit:hover {
+        top: -6px;
+    }
+}
+
+
+/* Keyframe animations */
+@-webkit-keyframes CreditCards {
+  0%        { background-position: -236px -224px; }
+  16.666%   { background-position: -236px -224px; }
+  16.667%   { background-position: -204px -224px; }
+  33.332%   { background-position: -204px -224px; }
+  33.333%   { background-position: -140px -224px; }
+  49.999%   { background-position: -140px -224px; }
+  50%       { background-position: -108px -224px; }
+  66.666%   { background-position: -108px -224px; }
+  66.667%   { background-position: -187px -246px; }
+  83.332%   { background-position: -187px -246px; }
+  83.333%   { background-position: -172px -224px; }
+}
+@-moz-keyframes CreditCards {
+  0%        { background-position: -236px -224px; }
+  16.666%   { background-position: -236px -224px; }
+  16.667%   { background-position: -204px -224px; }
+  33.332%   { background-position: -204px -224px; }
+  33.333%   { background-position: -140px -224px; }
+  49.999%   { background-position: -140px -224px; }
+  50%       { background-position: -108px -224px; }
+  66.666%   { background-position: -108px -224px; }
+  66.667%   { background-position: -187px -246px; }
+  83.332%   { background-position: -187px -246px; }
+  83.333%   { background-position: -172px -224px; }
+}
+@-o-keyframes CreditCards {
+  0%        { background-position: -236px -224px; }
+  16.666%   { background-position: -236px -224px; }
+  16.667%   { background-position: -204px -224px; }
+  33.332%   { background-position: -204px -224px; }
+  33.333%   { background-position: -140px -224px; }
+  49.999%   { background-position: -140px -224px; }
+  50%       { background-position: -108px -224px; }
+  66.666%   { background-position: -108px -224px; }
+  66.667%   { background-position: -187px -246px; }
+  83.332%   { background-position: -187px -246px; }
+  83.333%   { background-position: -172px -224px; }
+}
+@keyframes CreditCards {
+  0%        { background-position: -236px -224px; }
+  16.666%   { background-position: -236px -224px; }
+  16.667%   { background-position: -204px -224px; }
+  33.332%   { background-position: -204px -224px; }
+  33.333%   { background-position: -140px -224px; }
+  49.999%   { background-position: -140px -224px; }
+  50%       { background-position: -108px -224px; }
+  66.666%   { background-position: -108px -224px; }
+  66.667%   { background-position: -187px -246px; }
+  83.332%   { background-position: -187px -246px; }
+  83.333%   { background-position: -172px -224px; }
+  99.999%   { background-position: -172px -224px; }
+}
