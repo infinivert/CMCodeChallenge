@@ -54,14 +54,14 @@
                             <input type="checkbox" value="save-cc" />
                             Save
                         </label>
-                        <span class="jcc-payment-box-info-cost"><?= $default_cost ?></span>
+                        <span class="jcc-payment-box-info-cost" data-update-cost="text"><?= $default_cost ?></span>
                     </span>
                     <input type="text" class="jcc-cc-number" name="cc-number" placeholder="Card Number" required="required">
                     <i class="icon-lock"></i>
                     <input type="text" class="jcc-cc-exp" name="cc-exp" placeholder="MM / YY" required="required">
                     <input type="text" class="jcc-cc-cvc" name="cc-cvc" placeholder="CVC" required="required">
                 </div>
-                <input type="submit" class="jcc-button" name="payment-type-cc" value="Buy Credits">
+                <input type="submit" class="jcc-button" name="payment-type-cc" data-update-value="" data-update-value-before="Buy $" data-update-value-after=" Credits" value="Buy <?= $default_cost ?> Credits">
             </div>
             <div class="jcc-payment-box jcc-paypal">
                 <div class="jcc-payment-box-container">
@@ -76,6 +76,6 @@
 
     // Include additional scripts here
 ?>
-
+<script src="<?= APPURL ?>Assets/Scripts/app.js"></script>
 <?php
     require(APPPATH . 'Views/Partials/footer.php');
