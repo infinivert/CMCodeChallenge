@@ -26,25 +26,19 @@ class DataSet
 
         $table = $staticModelName::$table;
 
-        $sql = "SELECT * FROM `:table` ORDER BY `:sortBy` :sortDir LIMIT :startRow, :maxRows;";
+        $sql = "SELECT * FROM `" . $this->sanitizeString($table) . "` ORDER BY `" . $this->sanitizeString($sortBy) . "` " . $this->sanitizeString($sortDir) . " LIMIT " . (int) $startRow . ", " . (int) $maxRows;
 
-        $data = [
-            ':table' => $table,
-            ':sortBy' => $sortBy,
-            ':sortDir' => $sortDir,
-            ':startRow' => (int) $startRow,
-            ':maxRows' => (int) $maxRows
-        ];
-
-        $query = $this->conn->prepare($sql);
-        $query->execute($data);
+        $query = $this->conn->query($sql);
 
         $count = 0;
-
-        while ($startRow = $query->fetch(\PDO::FETCH_ASSOC)) {
+        foreach ($this->conn->query($sql) as $row) {
             $count++;
             $this->data[$count] = ModelFactory::make($modelName);
             $this->data[$count]->loadArray($row);
         }
+    }
+
+    private function sanitizeString($string) {
+        return str_replace(';', '', filter_var($string, FILTER_SANITIZE_STRING));
     }
 }
